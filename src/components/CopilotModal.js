@@ -151,15 +151,15 @@ class CopilotModal extends Component<Props, State> {
       tooltip.right = tooltip.right === 0 ? tooltip.right + MARGIN : tooltip.right;
       // tooltip.maxWidth = layout.width - tooltip.right - MARGIN;
       tooltip.maxWidth = layout.width - tooltip.right - MARGIN_TOOLTIP;
-      // arrow.right = tooltip.right + (this.props.positionArrow ? this.props.positionArrow : MARGIN);
-      arrow.right = tooltip.right + (this.props.positionArrow ? this.props.positionArrow : MARGIN);
+      arrow.right = tooltip.right + (this.props.positionArrowCenter ? ((obj.width - 10) / 2) : MARGIN);
+      // arrow.right = tooltip.right +  MARGIN;
     } else {
       tooltip.left = Math.max(obj.left, 0);
       tooltip.left = tooltip.left === 0 ? tooltip.left + MARGIN : tooltip.left;
       // tooltip.maxWidth = layout.width - tooltip.left - MARGIN;
       tooltip.maxWidth = layout.width - tooltip.left - MARGIN_TOOLTIP;
-      // arrow.left = tooltip.left + (this.props.positionArrow ? this.props.positionArrow : MARGIN);
-      arrow.left = tooltip.left + MARGIN;
+      arrow.left = tooltip.left + (this.props.positionArrowCenter ? ((obj.width - 10) / 2) : MARGIN);
+      // arrow.left = tooltip.left + MARGIN;
     }
 
     const animate = {
@@ -264,7 +264,6 @@ class CopilotModal extends Component<Props, State> {
       tooltipComponent: TooltipComponent,
       stepNumberComponent: StepNumberComponent,
     } = this.props;
-
     return [
       <Animated.View
         key="stepNumber"
