@@ -7,7 +7,7 @@ export const ZINDEX: number = 100;
 export const MARGIN: number = 13;
 export const OFFSET_WIDTH: number = 4;
 export const ARROW_SIZE: number = 6;
-export const MARGIN_TOOLTIP = 5;
+
 export default StyleSheet.create({
   container: {
     position: 'absolute',
@@ -35,7 +35,6 @@ export default StyleSheet.create({
   },
   tooltipContainer: {
     flex: 1,
-    // borderWidth: 1
   },
   stepNumberContainer: {
     position: 'absolute',
@@ -59,16 +58,15 @@ export default StyleSheet.create({
     color: '#FFFFFF',
   },
   button: {
-    // padding: 10,
+    padding: 10,
   },
   buttonText: {
-    color: '#0779ff',
+    color: '#27ae60',
   },
   bottomBar: {
     marginTop: 10,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    // borderWidth: 1
   },
   overlayRectangle: {
     position: 'absolute',
