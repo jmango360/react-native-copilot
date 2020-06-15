@@ -66,7 +66,7 @@ export default StyleSheet.create({
   bottomBar: {
     marginTop: 10,
     flexDirection: 'row',
-    justifyContent: 'flex-end',
+    justifyContent: 'space-between',
   },
   overlayRectangle: {
     position: 'absolute',

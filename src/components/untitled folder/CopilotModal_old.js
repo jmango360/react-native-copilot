@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { Animated, Easing, View, NativeModules, Modal, StatusBar, Platform } from 'react-native';
 import Tooltip from './Tooltip';
 import StepNumber from './StepNumber';
-import styles, { MARGIN, ARROW_SIZE, STEP_NUMBER_DIAMETER, STEP_NUMBER_RADIUS, MARGIN_TOOLTIP } from './style';
+import styles, { MARGIN, ARROW_SIZE, STEP_NUMBER_DIAMETER, STEP_NUMBER_RADIUS } from './style';
 import type { SvgMaskPathFn } from '../types';
 
 type Props = {
@@ -149,16 +149,12 @@ class CopilotModal extends Component<Props, State> {
     if (horizontalPosition === 'left') {
       tooltip.right = Math.max(layout.width - (obj.left + obj.width), 0);
       tooltip.right = tooltip.right === 0 ? tooltip.right + MARGIN : tooltip.right;
-      // tooltip.maxWidth = layout.width - tooltip.right - MARGIN;
-      tooltip.maxWidth = layout.width - tooltip.right - MARGIN_TOOLTIP;
-      // arrow.right = tooltip.right + (this.props.positionArrow ? this.props.positionArrow : MARGIN);
-      arrow.right = tooltip.right + (this.props.positionArrow ? this.props.positionArrow : MARGIN);
+      tooltip.maxWidth = layout.width - tooltip.right - MARGIN;
+      arrow.right = tooltip.right + MARGIN;
     } else {
       tooltip.left = Math.max(obj.left, 0);
       tooltip.left = tooltip.left === 0 ? tooltip.left + MARGIN : tooltip.left;
-      // tooltip.maxWidth = layout.width - tooltip.left - MARGIN;
-      tooltip.maxWidth = layout.width - tooltip.left - MARGIN_TOOLTIP;
-      // arrow.left = tooltip.left + (this.props.positionArrow ? this.props.positionArrow : MARGIN);
+      tooltip.maxWidth = layout.width - tooltip.left - MARGIN;
       arrow.left = tooltip.left + MARGIN;
     }
 
