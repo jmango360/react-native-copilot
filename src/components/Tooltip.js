@@ -51,6 +51,7 @@ const Tooltip = ({
           </TouchableOpacity>
           : null
       }
+      <View/>
       {
         !isLastStep ?
           <TouchableOpacity onPress={handleNext}>
