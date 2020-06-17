@@ -12,7 +12,9 @@ type Props = {
 
 const Button = ({ wrapperStyle, style, ...rest }: Props) => (
   <View style={[styles.button, wrapperStyle]}>
-    <Text style={[styles.buttonText, style]} {...rest} />
+    <Text style={[styles.buttonText, style,
+       {fontSize: rest.isIphoneOld ? 12 : null}
+       ]} {...rest} />
   </View>
 );
 

@@ -26,6 +26,7 @@ const Tooltip = ({
   handleStop,
   currentStep,
   labels,
+  isIphoneOld
 }: Props) => (
   <View style={{
     //  borderWidth :1,
@@ -39,15 +40,15 @@ const Tooltip = ({
     <View style={[styles.bottomBar]}>
       {
         !isLastStep ?
-          <TouchableOpacity onPress={handleStop} style={{paddingRight: 25 }}>
-            <Button>{labels.skip || 'Skip'}</Button>
+          <TouchableOpacity onPress={handleStop} style={{paddingRight: 15 }}>
+            <Button isIphoneOld={isIphoneOld}>{labels.skip || 'Skip'}</Button>
           </TouchableOpacity>
           : null
       }
       {
         !isFirstStep ?
-          <TouchableOpacity onPress={handlePrev} style={{ paddingRight: 10}}>
-            <Button>{labels.previous || 'Previous'}</Button>
+          <TouchableOpacity onPress={handlePrev} style={{ paddingRight: 7}}>
+            <Button isIphoneOld={isIphoneOld}>{labels.previous || 'Previous'}</Button>
           </TouchableOpacity>
           : null
       }
@@ -55,10 +56,10 @@ const Tooltip = ({
       {
         !isLastStep ?
           <TouchableOpacity onPress={handleNext}>
-            <Button>{labels.next || 'Next'}</Button>
+            <Button isIphoneOld={isIphoneOld}>{labels.next || 'Next'}</Button>
           </TouchableOpacity> :
           <TouchableOpacity onPress={handleStop}>
-            <Button>{labels.finish || 'Finish'}</Button>
+            <Button isIphoneOld={isIphoneOld}>{labels.finish || 'Finish'}</Button>
           </TouchableOpacity>
       }
     </View>

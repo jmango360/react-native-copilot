@@ -135,7 +135,7 @@ class CopilotModal extends Component<Props, State> {
 
     const tooltip = {};
     const arrow = {};
-
+    console.log('obj.........', layout);
     if (verticalPosition === 'bottom') {
       tooltip.top = obj.top + obj.height + MARGIN;
       arrow.borderBottomColor = '#fff';
@@ -292,6 +292,7 @@ class CopilotModal extends Component<Props, State> {
           handlePrev={this.handlePrev}
           handleStop={this.handleStop}
           labels={this.props.labels}
+          isIphoneOld={this.state.layout.width <= 320}
         />
       </Animated.View>,
     ];
