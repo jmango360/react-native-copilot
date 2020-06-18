@@ -65,6 +65,7 @@ export default StyleSheet.create({
   buttonText: {
     color: '#0779ff',
     // fontWeight: 'bold',
+    fontSize:12,
     fontFamily: Platform.OS === 'ios' ? "OpenSans" : "OpenSans-Regular",
   },
   bottomBar: {

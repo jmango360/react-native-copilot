@@ -291,7 +291,7 @@ class CopilotModal extends Component<Props, State> {
           handlePrev={this.handlePrev}
           handleStop={this.handleStop}
           labels={this.props.labels}
-          isIphoneOld={this.state.layout.width <= 320}
+          // isIphoneOld={this.state.layout.width <= 320}
         />
       </Animated.View>,
     ];
