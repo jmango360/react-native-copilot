@@ -47,7 +47,7 @@ const Tooltip = ({
       }
       {
         !isFirstStep ?
-          <TouchableOpacity onPress={handlePrev} style={{ paddingRight: 7, marginLeft: (!isLastStep && !isIphoneOld) ? 30 : 5}}>
+          <TouchableOpacity onPress={handlePrev} style={{ paddingRight: 7, marginLeft: (!isLastStep && !isIphoneOld) ? 30 : 0}}>
             <Button>{labels.previous || 'Previous'}</Button>
           </TouchableOpacity>
           : null
