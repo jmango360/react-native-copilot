@@ -26,6 +26,7 @@ const Tooltip = ({
   handleStop,
   currentStep,
   labels,
+  isIphoneOld
 }: Props) => (
   <View style={{
     //  borderWidth :1,
@@ -39,7 +40,7 @@ const Tooltip = ({
     <View style={[styles.bottomBar]}>
       {
         !isLastStep ?
-          <TouchableOpacity onPress={handleStop} style={{paddingRight: 15 }}>
+          <TouchableOpacity onPress={handleStop} style={{paddingRight: 15, marginLeft: (!isLastStep && !isIphoneOld) ? 30 : 5 }}>
             <Button>{labels.skip || 'Skip'}</Button>
           </TouchableOpacity>
           : null
