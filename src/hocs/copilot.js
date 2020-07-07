@@ -43,7 +43,8 @@ const copilot = ({
   svgMaskPath,
   verticalOffset = 0,
   wrapperStyle,
-  positionArrowCenter
+  positionArrowCenter,
+  totalNumberStep
 } = {}) =>
   (WrappedComponent) => {
     class Copilot extends Component<any, State> {
@@ -52,6 +53,7 @@ const copilot = ({
         currentStep: null,
         visible: false,
         scrollView: null,
+        totalStepNumber: 0
       };
 
       getChildContext(): { _copilot: CopilotContext } {
@@ -189,6 +191,13 @@ const copilot = ({
           top: (size.y - (OFFSET_WIDTH / 2)) + verticalOffset,
         });
       }
+
+      totalStepNumber = (number = 3) => {
+        this.setState({
+          totalNumberStep: number
+        });
+      }
+
       render() {
         return (
           <View style={wrapperStyle || { flex: 1 }}>
@@ -198,11 +207,13 @@ const copilot = ({
               currentStep={this.state.currentStep}
               visible={this.state.visible}
               copilotEvents={this.eventEmitter}
+              totalStepNumber={this.totalStepNumber}
             />
             <CopilotModal
               next={this.next}
               prev={this.prev}
               stop={this.stop}
+              
               positionArrowCenter={positionArrowCenter}
               visible={this.state.visible}
               isFirstStep={this.isFirstStep()}
@@ -220,6 +231,7 @@ const copilot = ({
               svgMaskPath={svgMaskPath}
               stopOnOutsideClick={stopOnOutsideClick}
               ref={(modal) => { this.modal = modal; }}
+              totalNumberStep={this.state.totalNumberStep}
             />
           </View>
         );

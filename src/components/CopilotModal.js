@@ -144,20 +144,20 @@ class CopilotModal extends Component<Props, State> {
       arrow.borderTopColor = '#fff';
       arrow.bottom = tooltip.bottom - (ARROW_SIZE * 2);
     }
-
     if (horizontalPosition === 'left') {
       tooltip.right = Math.max(layout.width - (obj.left + obj.width), 0);
       tooltip.right = tooltip.right === 0 ? tooltip.right + MARGIN : tooltip.right;
       // tooltip.maxWidth = layout.width - tooltip.right - MARGIN;
+      // tooltip.maxWidth = layout.width - tooltip.right - MARGIN_TOOLTIP;
       tooltip.maxWidth = layout.width - tooltip.right - MARGIN_TOOLTIP;
       arrow.right = tooltip.right + (this.props.positionArrowCenter ? ((obj.width - 10) / 2) : MARGIN);
-      // arrow.right = tooltip.right +  MARGIN;
+      // arrow.right = tooltip.right ;
     } else {
       tooltip.left = Math.max(obj.left, 0);
       tooltip.left = tooltip.left === 0 ? tooltip.left + MARGIN : tooltip.left;
       // tooltip.maxWidth = layout.width - tooltip.left - MARGIN;
       tooltip.maxWidth = layout.width - tooltip.left - MARGIN_TOOLTIP;
-      arrow.left = tooltip.left + (this.props.positionArrowCenter ? ((obj.width - 10) / 2) : MARGIN);
+      arrow.left = tooltip.left + (this.props.positionArrowCenter ? ((obj.width - 10 ) / 2) : MARGIN);
       // arrow.left = tooltip.left + MARGIN;
     }
 
@@ -292,6 +292,7 @@ class CopilotModal extends Component<Props, State> {
           handleStop={this.handleStop}
           labels={this.props.labels}
           isIphoneOld={this.state.layout.width <= 320}
+          totalNumberStep={this.props.totalNumberStep}
         />
       </Animated.View>,
     ];

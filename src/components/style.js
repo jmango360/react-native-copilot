@@ -24,11 +24,11 @@ export default StyleSheet.create({
   },
   tooltip: {
     position: 'absolute',
-    paddingTop: 15,
-    paddingHorizontal: 15,
     backgroundColor: '#fff',
     borderRadius: 3,
     overflow: 'hidden',
+    // width: 270,
+    // left: 20
   },
   tooltipText: {
     color: '#464646',
@@ -36,6 +36,7 @@ export default StyleSheet.create({
   },
   tooltipContainer: {
     flex: 1,
+    marginTop: 5,
     // borderWidth: 1
   },
   stepNumberContainer: {
@@ -55,7 +56,7 @@ export default StyleSheet.create({
     backgroundColor: '#27ae60',
   },
   stepNumberText: {
-    fontSize: 10,
+    fontSize: 12,
     backgroundColor: 'transparent',
     color: '#FFFFFF',
   },
@@ -63,16 +64,17 @@ export default StyleSheet.create({
     // padding: 10,
   },
   buttonText: {
-    color: '#0779ff',
+    // color: '#0779ff',
     // fontWeight: 'bold',
-    fontSize:12,
+    fontSize:10,
     fontFamily: Platform.OS === 'ios' ? "OpenSans" : "OpenSans-Regular",
   },
   bottomBar: {
-    marginTop: 10,
+    marginTop: 18,
+    marginBottom: 5,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    // borderWidth: 1
+    alignItems:'center',
   },
   overlayRectangle: {
     position: 'absolute',
