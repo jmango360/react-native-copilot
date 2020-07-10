@@ -142,7 +142,7 @@ class CopilotModal extends Component<Props, State> {
     } else {
       tooltip.bottom = layout.height - (obj.top - MARGIN);
       arrow.borderTopColor = '#fff';
-      arrow.bottom = tooltip.bottom - (ARROW_SIZE * 2);
+      arrow.bottom = tooltip.bottom - (ARROW_SIZE * 2) + 1;
     }
     if (horizontalPosition === 'left') {
       tooltip.right = Math.max(layout.width - (obj.left + obj.width), 0);
