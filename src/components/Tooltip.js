@@ -66,7 +66,7 @@ const Tooltip = ({
           style={{
             marginRight: 0,
             borderRadius: 5,
-            width: 60,
+            paddingHorizontal:isIphoneOld ? 7 : 15,
             height: 30,
             justifyContent: 'center',
             alignItems: 'center',
