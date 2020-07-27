@@ -66,8 +66,9 @@ const Tooltip = ({
           style={{
             marginRight: 0,
             borderRadius: 5,
-            paddingHorizontal:isIphoneOld ? 7 : 10,
+            paddingHorizontal:isIphoneOld ? 5 : 7,
             height: 30,
+            // width: 60,
             justifyContent: 'center',
             alignItems: 'center',
             backgroundColor: '#f5f5f5'
@@ -77,7 +78,7 @@ const Tooltip = ({
           }} >{labels.skip || 'Skip'}</Button>
         </TouchableOpacity>
 
-        <View style={{ flexDirection: 'row', alignSelf: 'center'}}>
+        <View style={{ flexDirection: 'row', alignSelf: 'center', marginHorizontal:isIphoneOld ? 0 : 10}}>
           {renderCarousel(totalNumberStep, currentStep.order)}
         </View>
         {
@@ -86,6 +87,7 @@ const Tooltip = ({
               borderRadius: 5,
               width: 60,
               height: 30,
+              // marginLeft: 5,
               justifyContent: 'center',
               alignItems: 'center',
               backgroundColor: '#0779ff'
