@@ -208,6 +208,7 @@ const copilot = ({
               visible={this.state.visible}
               copilotEvents={this.eventEmitter}
               totalStepNumber={this.totalStepNumber}
+              stop={this.stop}
             />
             <CopilotModal
               next={this.next}
