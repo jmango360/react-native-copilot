@@ -1,10 +1,11 @@
 // @flow
 import React, { Component } from 'react';
-import { Animated, Easing, View, NativeModules, Modal, StatusBar, Platform } from 'react-native';
+import { Animated, Easing, View, NativeModules, StatusBar, Platform } from 'react-native';
 import Tooltip from './Tooltip';
 import StepNumber from './StepNumber';
 import styles, { MARGIN, ARROW_SIZE, STEP_NUMBER_DIAMETER, STEP_NUMBER_RADIUS, MARGIN_TOOLTIP } from './style';
 import type { SvgMaskPathFn } from '../types';
+import Modal from 'react-native-root-modal';
 
 type Props = {
   stop: () => void,
@@ -304,11 +305,18 @@ class CopilotModal extends Component<Props, State> {
 
     return (
       <Modal
-        animationType="none"
+        // animationType="none"
         visible={containerVisible}
-        onRequestClose={noop}
-        transparent
-        supportedOrientations={['portrait', 'landscape']}
+        // onRequestClose={noop}
+        // transparent
+        // supportedOrientations={['portrait', 'landscape']}
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+        }}
       >
         <View
           style={styles.container}
