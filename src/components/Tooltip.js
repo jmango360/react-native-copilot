@@ -68,7 +68,8 @@ const Tooltip = ({
             borderRadius: 5,
             // paddingHorizontal:isIphoneOld ? 5 : 7,
             height: 30,
-            width: 60,
+            minWidth: 60,
+            paddingHorizontal:5,
             justifyContent: 'center',
             alignItems: 'center',
             backgroundColor: '#f5f5f5'
@@ -85,7 +86,8 @@ const Tooltip = ({
           !isLastStep ?
             <TouchableOpacity style={{
               borderRadius: 5,
-              width: 60,
+              minWidth: 60,
+              paddingHorizontal:5,
               height: 30,
               // marginLeft: 5,
               justifyContent: 'center',
@@ -100,7 +102,8 @@ const Tooltip = ({
             <TouchableOpacity
               style={{
                 borderRadius: 5,
-                width: 60,
+                minWidth: 60,
+                paddingHorizontal:5,
                 height: 30,
                 justifyContent: 'center',
                 alignItems: 'center',
